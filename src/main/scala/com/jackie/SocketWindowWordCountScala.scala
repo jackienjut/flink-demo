@@ -1,18 +1,29 @@
 package com.jackie
 
+import org.apache.flink.api.java.utils.ParameterTool
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.streaming.api.windowing.time.Time
 
 object SocketWindowWordCountScala {
 
   def main(args: Array[String]): Unit = {
+
+    val port :Int = try{
+        ParameterTool.fromArgs(args).getInt("port");
+    }catch {
+      case e:Exception =>{
+        System.err.println("No port set,. use default port 9000 -- scala")
+      }
+        9000
+    }
+
     //获取运行环境
 
     val env: StreamExecutionEnvironment = StreamExecutionEnvironment.getExecutionEnvironment;
 
     //连接socket 获取输入数据
     val hostname: String = "192.168.3.130";
-    val port: Int = 9000;
+
     val delimiter: Char = '\n';
 
     val text = env.socketTextStream(hostname, port, delimiter);
