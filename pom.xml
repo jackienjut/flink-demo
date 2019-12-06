@@ -21,26 +21,34 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-java</artifactId>
             <version>${flink-java}</version>
-            <scope>provided</scope>
+            <!--
+                        <scope>provided</scope>
+            -->
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_2.11</artifactId>
             <version>${flink-streaming-java_2.11}</version>
+<!--
             <scope>provided</scope>
+-->
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-scala_2.11</artifactId>
             <version>${flink-scala_2.11}</version>
+<!--
             <scope>provided</scope>
+-->
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-scala_2.11</artifactId>
             <version>${flink-streaming-scala_2.11}</version>
+<!--
             <scope>provided</scope>
+-->
         </dependency>
 
 
