@@ -7,7 +7,8 @@ import org.apache.flink.api.java.operators.DataSource;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.util.Collector;
 
-public class BatchWordCountJava {
+public class  BatchWordCountJava {
+
 
     public static void main(String[] args) throws Exception {
         String inputPath = "d:\\data\\file";

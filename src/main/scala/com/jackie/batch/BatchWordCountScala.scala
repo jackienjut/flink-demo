@@ -1,4 +1,4 @@
-package com.jackie
+package com.jackie.batch
 
 class BatchWordCountScala {
 

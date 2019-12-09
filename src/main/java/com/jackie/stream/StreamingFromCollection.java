@@ -21,6 +21,7 @@ public class StreamingFromCollection {
         DataStreamSource<Integer> collectionData = env.fromCollection(data);
 
         //对map数据就行处理
+
         SingleOutputStreamOperator<Integer> num = collectionData.map(new MapFunction<Integer, Integer>() {
             @Override
             public Integer map(Integer value) throws Exception {
