@@ -1,17 +1,12 @@
 package com.jackie.batch.batchAPI;
 
-import org.apache.flink.api.common.functions.FlatMapFunction;
-import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.MapPartitionFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.api.java.operators.DataSource;
 import org.apache.flink.api.java.operators.MapPartitionOperator;
-import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.util.Collector;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -45,7 +40,6 @@ public class BathchDemoMapPartition {
                 //优点每个分区获得一次链接
                 Iterator<String> its = values.iterator();
 
-
                 while (its.hasNext()) {
                     String next = its.next();
                     String[] split = next.split("\\W+");
@@ -55,10 +49,7 @@ public class BathchDemoMapPartition {
                 }
             }
         });
-
         mapPartitionData.print();
-
-
     }
 
 }

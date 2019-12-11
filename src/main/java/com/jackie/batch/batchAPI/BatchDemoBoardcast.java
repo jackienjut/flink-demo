@@ -4,11 +4,8 @@ import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RichMapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.api.java.operators.DataSource;
-import org.apache.flink.api.java.operators.MapOperator;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
-import scala.Int;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,7 +70,7 @@ public class BatchDemoBoardcast {
             @Override
             public String map(String s) throws Exception {
                 Integer age = boardMapD.get(s);
-                return s + "age: "+age;
+                return s + "age: " + age;
             }
         }).withBroadcastSet(toBroadcast, "broadcastMapName");//执行广播数据的操作
         result.print();
